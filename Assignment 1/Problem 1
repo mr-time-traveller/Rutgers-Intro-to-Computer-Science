@@ -1,1 +1,49 @@
+#Psuedocode
+store dosage is equal to 0
+input a number in age
+input a boolean value to LiverDamage
+if LiverDamage is true
+	then if age>0 and age<12
+			then dosage is equal to 0 
+		if age>=12 and age<18
+			then dosage is equal to 1 
+		if age>=18 
+			then dosage is equal to 2 
+		else 
+		    print "Wrong age"
+else  
+    	if age>0 and age<12
+			then dosage is equal to 0 
+		if age>=12 and age<18
+			then dosage is equal to 2 
+		if age>=18 
+			then dosage is equal to 4 
+		else 	
+			print "wrong age"
+if dosage==1 
+		print dosage "pill"
+else 	
+		print dosage "pills"
+	
+	INPUT : 14
+			True
+			
+	OUTPUT: 1 pill
+	
+	INPUT: -2
+	OUTPUT: wrong age
+	
+	INPUT : 0
+	OUTPUT: wrong age
+	
+	ERROR CONDITIONS: 1. Liver Damage condition requires to be a boolean 
+						character and needs two loops in order to satisfy the 
+						dosage requirements. (if LiverDamage is entered as a 
+						numeric or character value)
+					  2. if statement needed to print the singularity or
+					    plurality of pills. (1 pill, 2 pills, 3 pills, 0 pills)
+					    (if it prints the dosage as 1 pills)
+					  3. If age is entered negative then the program needs to 
+					  	stop (if loop for printing if the age
 
+	Test Cases: -23, 0 , 14				
