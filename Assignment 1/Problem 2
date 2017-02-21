@@ -1,0 +1,54 @@
+store 0 in shipping
+input number in CostBooks
+input string value in CouponCode
+if CouponCode is "shiphalf"
+	then if CostBooks>=100
+			then shipping is equal to 0
+		if CostBooks>=50 and books<100
+			then shipping is equal to 3
+		if CostBooks<50
+			then shipping is equal to 1
+		else 
+			print "wrong cost of books"
+		
+if CouponCode is "no coupon code"
+	then if CostBooks>=100
+			then shipping is equal to 0
+		if CostBooks>=50 and books<100
+			then shipping is equal to 6
+		if CostBooks<50
+			then shipping is equal to 2
+		else 
+			print "wrong cost of books"
+else 
+	print "Coupon Code Invalid"
+
+if shipping==1
+	print shipping "dollar"
+else 
+	print shipping "dollars"
+	
+	INPUT : 60
+			no coupon code
+			
+	OUTPUT: 6 dollars
+	
+	INPUT: -20
+	OUTPUT: wrong cost of books
+	
+	INPUT : 0
+	OUTPUT: wrong cost of books
+	
+	INPUT: 14
+		   shiphalf
+	OUTPUT: 1 dollar
+	
+	ERROR CONDITIONS: 1. CouponCode needs to be a string value (ERROR: if 
+						 CouponCode is entered as a numeric or boolean value)
+					  2. if statement needed to print the singularity or
+					    plurality of the dollars.(1 dollar, 2 dollars, etc)
+					    (ERROR: if it prints shipping as 1 dollars)
+					  3. If CostBooks is entered negative then the program needs 
+					  	 to stop (if loop for printing the correct cost of books)
+
+	Test Cases: 60 no coupon code, -20 , 0, 14 shiphalf		
