@@ -1,0 +1,16 @@
+#Pseudocode
+input word 
+	find indexof space in word 
+		store in space1
+	copy substring of word (0 to space1) in First
+	copy substring of word (space1+1 to end) in last
+	find indexof space in last 
+		store in space2
+	copy substring of last (space2+1 to end) into Last
+	copy substring of word (space1+1 to space2-1) in Middle
+	print Last," ",Middle," ",First
+	
+INPUT: I feel good
+OUTPUT: good feel I
+
+Test cases: Life is Amazing, Laugh out loud, Come my way
