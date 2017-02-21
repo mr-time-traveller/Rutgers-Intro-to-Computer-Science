@@ -1,0 +1,189 @@
+Assignment - 5
+
+Answers
+
+a. In-Place Selection sort: 
+                      The algorithm would be used to first compare the first element 
+                      in the array with the rest of the elements in the array and swap the char with the smallest
+                      ASCII value with the char that is stored as the first element in the array and so on.
+                      In the selection sort, the inner loop finds the next smallest (or largest) value 
+                      and the outer loop places that value into its proper location.
+ 
+  So, by showing the comparisions in the form of a table
+  The algorithm would perform the following comparisions on the unsorted array :                    
+  Unsorted array        M U E J R Q X B
+
+After pass:              array:                 comparisons in pass
+1                   B U E J R Q X M   		   7
+2                   B E U J R Q X M      	   6 
+3                   B E J U R Q X M      	   5 
+4 	         B E J M R Q X U		   4
+5                   B E J M Q R X U		   3
+6                   B E J M Q R X U	       	   2
+7	         B E J M Q R U X                    1	
+========================================================
+Each of these comparisions requires one swap for (n-1) elements.
+
+b. In-Place Insertion sort :
+                       The algorithm designed would be used to compare the first two elements of the array 
+	           and sorting them, and this process continues with the algorithm finding the proper location of the specific element
+                       of the array in the sorted list which is formed by comparing the elements before the current element.
+ 
+  So, by showing the comparisions in the form of a table
+  The algorithm would perform the following comparisions on the unsorted array :                    
+  Unsorted array        M U E J R Q X B
+
+After pass:              array:                 comparisons in pass
+1                   M U E J R Q X B   		   1
+2                   E M U J R Q X B      	   2 
+3                   E J M U R Q X B      	   3 
+4 	         E J M R U Q X B		   2
+5                   E J M Q R U X B		   3
+6                   E J M Q R U X B	               1
+7	         B E J M Q R U X                    7	
+========================================================
+Each of these comparisions requires shifting the sorted group for (n-1) elements.
+
+
+
+1. In-Place Selection Sort: 
+                                First, a for loop must be created so that the program goes through each and every element of the array. 
+Another for loop should be made in order to satisfy that each element is compared with all the remaining elements of the array.
+Then, an if loop is required to check if the ASCII value of the element (a char) in the array is less than that of the other respective elements. 
+Then, swapping of the elements would take place if the ASCII value of the alphabet derived from the array is less than that 
+of the other elements.
+
+     The algorithm would accept a char [] array.
+     Set first(variable) to 0. 
+     If first is less than the length of the array subtracted by 1,
+     Increment first by 1. (This ensures that each and every element of the array is compared)
+     Go through each element of the array
+     Set smallest (variable) to the value of first.
+     Set index (variable) to first+1 (To compare the first element with the next element)
+     If the index is less than the length of the array,
+     Increment index by 1. (To compare the first element with another element and so on)
+     Compare the elements of the array index and smallest and if the value inside index is less
+     than smallest,
+     Set smallest to index.
+     (These two loops were used to compare the first element to the second in the array)
+     Store the elements of the array : By storing first in a temporary variable referred as temp.
+     Store the element of array referred as smallest in the location of the variable first.
+     Swap values by storing the value of the element in temp to the location of smallest in the array.
+     (Similarly, the loop goes on and again the loop compares the second element of the array with
+     the rest of the elements and swaps values)
+     
+
+In-Place Insertion Sort: 
+                            First, a loop must be created so that the program goes through each and every element of the array.
+Another char variable must be made in order for comparing each individual elements in the array. A while loop ensures that 
+when the program reaches the second element it compares its ASCII value to the element before it, and if it is greater than
+second element, it stores the character in the first element as the second element and reduces the value of the variable index,
+in order to store the second element as the first. In this way the loop goes on and the algorithm inserts the element in their
+specific location by comparing the ASCII values to the elements before it.
+
+    
+     The algorithm accepts a char [] array.
+     Create a For loop with variable sorted set to 1.
+     If the value of the sorted is less than that of the length of the array,
+     Increment sorted by 1.
+     Set the value of the variable index to sorted.
+     Use a char variable to store each individual element of the array.
+     Create a While loop, to check if the value stored in index is greater than 0 and if the element in the array before 
+     the element at the position of index has ASCII value is greater than of the element at location of index.
+     Store the value of the previous element in the position of index
+     Decrement index by 1
+     Store the element at the position before index (That's why we decremented index by 1)
+     (Similarly the loop goes on and it keeps on checking if the ASCII value of the element before the current element is greater
+     than the current element. And inserts the element in the specific location)
+
+
+2. The factors that would affect the running time are: 
+
+   Characteristics of the computer system (e.g. processor speed, amount of memory, file-system type, etc.)
+   • The way the algorithm is implemented
+   • The particular instance of data the algorithm is operating on (e.g., amount of data, type of data).
+   • The number of steps in the algorithm.
+   • The number of operations in the algorithm.
+   
+   In-place selection sort: The instance where the algorithm operates on the array inside the for loop for 'n' iterations. (That is,
+                               to go through each and every element of the array) The instance where the algorithm compares one 
+                               element in the array with all the other elements of the array (in another for loop) for 'm' iterations.
+  
+  In-place insertion sort: The instance where the algorithm operates on the array inside the for loop for 'n' iterations.(That is,
+                              to go through each and every element of the array) The instance where the algorithm compares the 
+                              first element with the previous element and then, inserts the element in a specific position in the array
+                              for 'm' iterations.
+
+3. The operations that must be counted are:
+
+    In-place selection sort: If statement : array[index] < array[small]
+------------------------------------------------------------------------------------------------------------------------------
+                               1 Operation that must be counted. 
+
+    In-place insertion sort: While loop (to compare each element with the rest of the unsorted region elements): array[index-1] > first
+-------------------------------------------------------------------------------------------------------------------------------
+                              1 Operation that must be counted.
+
+4. Measure of input size in In-place selection sort:  index < array.length
+                            For comparing each individual element to the unsorted regions in the array, the array needs to 
+                            compare two elements for 'n' interations (which is the operation that counts)
+                             Hence, f(n) = 0 + 1 + 2 + 3 +..... n-1
+   
+   Measure of input size in In-place insertion sort:  firstUnsortedValue = array[index]
+                            For comparing each individual element to the unsorted regions in the array, the array needs to 
+                            compare the elements for 'n' interations (which is the operation that counts)
+                            Hence, f(n) = n-1 + n-2 + ........+ 3 + 2 + 1 + 0
+
+5. Best Case Input for In-place selection sort is when the elements in the array are already sorted in alphabetical order.
+   Worst Case Input for In-place selection sort is when all the elements are unsorted and the algorithm needs to make
+    (n-1) comparisons and in the end, no comparisons.
+     n-1 + n-2 + ...... 3 + 2 + 1 + 0
+
+   Best Case input for In-place insertion sort is when all the elements in the array do not require sorting that is, none of 
+   the element is needed to be inserted at a specific position.
+    n-1 + .............+ 1 + 0 = O(n)
+   Worst case input for In-place insertion sort is when all the elements are unsorted and the algorithm needs to start by
+   making zero comparisons to in the end, (n-1) comparisons.
+  0 + 1 + 2 + 3 +..... n-1
+                                         
+6.  Hence, f(n) = n-1 + n-2 + ...... 3 + 2 + 1 + 0
+                            The sum of the whole series gives us: (n*(n-1))/2     
+    O(f) = n^2 (for in-place selection sort)
+
+    Hence, f(n) = 0 + 1 + 2 + 3 +..... n-1
+   The sum of the whole series gives us: (n*(n-1))/2     
+    O(f) = n^2 (for in-place insertion sort)
+
+
+
+c. If arrays are of 2 different sizes then, they are not same and hence, the algorithm would return false.
+   This operation of determining the size of the arrays would take constant time. 
+   
+   The algorithm would choose an element from the first array and search it in the second array. The algorithm must have a nested loop 
+   for performing this operation. 
+   
+   The algorithm would have a nested loop and the two loops will have 'n' iterations and if an element is not found we break out. 
+   Thus, total number of iterations in worst 
+   case (both arrays are same) = n^2.
+
+   In Big-O we simple have O(1+n^2) = O(n^2)
+
+d. While the string is not Null, algorithm would take the first alphabet, find all the duplicate alphabets and remove them by using substrings. 
+    Finding duplicate alphabets takes n time for the algorithm and finding substring takes n^2 time in worst case. 
+   Hence total time = n^3. 
+   
+   The algorithm would also check the number of duplicate alphabets in the array and if it is greater than 1 in any case, 
+    the algorithm would increment the count by 1.
+    This is a constant time operation.
+   Thus, our Big-O is O(n^3).
+
+e. 
+     Let the rows in the 2-D array be n and the columns be m.
+     row = n
+     col = m
+     The algorithm can be used to check each row until that row has a non 0 element.
+     In worst case, the algorithm would have to search through each element in a row = n time and through m rows. 
+     The algorithm needs to perform constant time operations like checking if element is 0. 
+     In worst case the algorithm would have to perform n*m operations.
+
+     Thus our Big-O is O (n*m).
